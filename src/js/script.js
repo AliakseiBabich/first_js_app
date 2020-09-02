@@ -1,63 +1,226 @@
 "use strict";
 
-let numberOfFilms;
+// let numberOfFilms;
 
-function start() {
-    numberOfFilms = +prompt("How many films have You watched so far?", "");
+// function start() {
+//     numberOfFilms = +prompt("How many films have You watched so far?", "");
 
-    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-        numberOfFilms = +prompt("How many films have You watched so far?", "");
-    }
-}
-start();
+//     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+//         numberOfFilms = +prompt("How many films have You watched so far?", "");
+//     }
+// }
+// start();
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
 
-function rememberMyFilms() {
-    for (let i = 0; i < 2; i++) {
-        const a = prompt("What is one of the last films You've seen?", ""),
-              b = prompt("How whould You score it (from 1 to 10)?", "");
+// function rememberMyFilms() {
+//     for (let i = 0; i < 2; i++) {
+//         const a = prompt("What is one of the last films You've seen?", ""),
+//               b = prompt("How whould You score it (from 1 to 10)?", "");
     
-        if ((a != null) && (b != null) && (a != '') && (b != '') && (a.length < 50)) {
-            personalMovieDB.movies[a] = b;
-            console.log("done");
-        } else {
-            console.log("error");
-            i--;
-        }
-    }
-}
+//         if ((a != null) && (b != null) && (a != '') && (b != '') && (a.length < 50)) {
+//             personalMovieDB.movies[a] = b;
+//             console.log("done");
+//         } else {
+//             console.log("error");
+//             i--;
+//         }
+//     }
+// }
 // rememberMyFilms();
 
-function detectPersonalLevel() {
-    if (personalMovieDB.count < 10) {
-        console.log("You've watched not so many movies :(");
-    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-        console.log("You are a classic movie viewer");
-    } else if (personalMovieDB.count > 30) {
-        console.log("You are a movie lover!");
-    } else {
-        console.log("Error");
-    }
-}
+// function detectPersonalLevel() {
+//     if (personalMovieDB.count < 10) {
+//         console.log("You've watched not so many movies :(");
+//     } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//         console.log("You are a classic movie viewer");
+//     } else if (personalMovieDB.count > 30) {
+//         console.log("You are a movie lover!");
+//     } else {
+//         console.log("Error");
+//     }
+// }
 // detectPersonalLevel();
 
-function showMyDB() {
-    if (personalMovieDB.privat == false) {
-        console.log(personalMovieDB);
-    }
-}
-showMyDB();
+// function showMyDB() {
+//     if (personalMovieDB.privat == false) {
+//         console.log(personalMovieDB);
+//     }
+// }
+// showMyDB();
 
-function writeYourGenres() {
-    for (let i = 1; i <= 3; i++) {
-        personalMovieDB.genres[i - 1] = prompt(`Your favourite genre number ${i}`);
+// function writeYourGenres() {
+//     for (let i = 1; i <= 3; i++) {
+//         personalMovieDB.genres[i - 1] = prompt(`Your favourite genre number ${i}`);
+//     }
+// }
+// writeYourGenres();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function first() {
+//     // do something;
+//     setTimeout(function() {
+//         console.log(1);
+//     }, 500);
+// }
+
+// function second() {
+//     console.log(2);
+// }
+
+// first();
+// second();
+
+// function learnJS(lang, callback) {
+//     console.log(`I learn: ${lang}`);
+//     callback();
+// }
+
+// learnJS("Javascript", function() {
+//     console.log("I've passed this lesson");
+// });
+
+// const options = {
+//     name: "test",
+//     width: 1024,
+//     height: 1024,
+//     colors: {
+//         border: "black",
+//         bg: "red"
+//     },
+//     makeTest: function() {
+//         console.log("test");
+//     }
+// };
+
+// options.makeTest();
+
+// console.log(Object.keys(options).length);
+
+// const {border, bg} = options.colors; // деструктуризация
+
+// console.log(border);
+
+// console.log(options.name);
+
+// delete options.name;
+
+// console.log(options);
+
+// let counter = 0;
+
+// for (let key in options) {
+//     if (typeof(options[key]) === "object") {
+//         for (let i in options[key]) {
+//             console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+//             counter++;
+//         }
+//     } else {
+//         console.log(`Свойство ${key} имеет значение ${options[key]}`);
+//         counter++;
+//     }
+// }
+
+// console.log(counter);
+
+// const arr = [111, 25, 13, 48, 245, 16];
+// arr.sort(compareNum);
+// console.log(arr);
+
+// function compareNum(a, b) {
+//     return a - b;
+// }
+
+// // arr[arr.length] = 0;
+// // console.log(arr.length);
+
+// arr.forEach(function(item, i, arr) {
+//     console.log(`${i}: ${item} внутри массива ${arr}`);
+// });
+
+// for (let value of arr) {
+//     console.log(value);
+// }
+
+// // arr.pop();
+// arr.push(10);
+
+// console.log(arr);
+
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+// const str = prompt('', '');
+// const products = str.split(', ');
+// products.sort();
+// console.log(products.join('; '));
+
+// let a = 5,
+//     b = a;
+
+// b += 5;
+
+// console.log(b);
+// console.log(a);
+
+// const obj = {
+//     a: 5,
+//     b: 1
+// };
+
+// const copy = obj;
+
+// copy.a = 10;
+
+// console.log(copy);
+// console.log(obj);
+
+function copy(main) {
+    let objCopy = {};
+    let key;
+    for (key in main) {
+         objCopy[key] = main[key];
     }
+    return objCopy;
 }
-writeYourGenres();
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 7,
+        y: 12
+    }
+};
+const newNumbers = copy(numbers);
+newNumbers.a = 10;
+console.log(newNumbers);
+console.log(numbers);
+
+const add = {
+    d: 17,
+    e: 20
+};
+console.log(Object.assign(numbers, add));
