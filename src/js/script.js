@@ -1,72 +1,72 @@
 "use strict";
 
-const personalMovieDB = {
-    count: 0,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false,
-    start: function() {
-        personalMovieDB.count = +prompt("How many films have You watched so far?", "");
+// const personalMovieDB = {
+//     count: 0,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false,
+//     start: function() {
+//         personalMovieDB.count = +prompt("How many films have You watched so far?", "");
     
-        while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
-            personalMovieDB.count = +prompt("How many films have You watched so far?", "");
-        }
-    },
-    rememberMyFilms: function() {
-        for (let i = 0; i < 2; i++) {
-            const a = prompt("What is one of the last films You've seen?", ""),
-                  b = prompt("How whould You score it (from 1 to 10)?", "");
+//         while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+//             personalMovieDB.count = +prompt("How many films have You watched so far?", "");
+//         }
+//     },
+//     rememberMyFilms: function() {
+//         for (let i = 0; i < 2; i++) {
+//             const a = prompt("What is one of the last films You've seen?", ""),
+//                   b = prompt("How whould You score it (from 1 to 10)?", "");
         
-            if ((a != null) && (b != null) && (a != '') && (b != '') && (a.length < 50)) {
-                personalMovieDB.movies[a] = b;
-                console.log("done");
-            } else {
-                console.log("error");
-                i--;
-            }
-        }
-    },
-    detectPersonalLevel: function() {
-        if (personalMovieDB.count < 10) {
-            console.log("You've watched not so many movies :(");
-        } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-            console.log("You are a classic movie viewer");
-        } else if (personalMovieDB.count > 30) {
-            console.log("You are a movie lover!");
-        } else {
-            console.log("Error");
-        }
-    },
-    showMyDB: function() {
-        if (personalMovieDB.privat == false) {
-            console.log(personalMovieDB);
-        }
-    },
-    toggleVisibleMyDB: function() {
-        if (personalMovieDB.privat == false) {
-            personalMovieDB.privat = true;
-        } else {
-            personalMovieDB.privat = false;
-        }
-    },
-    writeYourGenres: function() {
-        for (let i = 1; i <= 3; i++) {
-            let genres = prompt(`Your favourite genre number ${i}`);
-            if (genres == null || genres == '') {
-                i--;
-            } else {
-                personalMovieDB.genres[i - 1] = genres;
-            }
-        }
+//             if ((a != null) && (b != null) && (a != '') && (b != '') && (a.length < 50)) {
+//                 personalMovieDB.movies[a] = b;
+//                 console.log("done");
+//             } else {
+//                 console.log("error");
+//                 i--;
+//             }
+//         }
+//     },
+//     detectPersonalLevel: function() {
+//         if (personalMovieDB.count < 10) {
+//             console.log("You've watched not so many movies :(");
+//         } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//             console.log("You are a classic movie viewer");
+//         } else if (personalMovieDB.count > 30) {
+//             console.log("You are a movie lover!");
+//         } else {
+//             console.log("Error");
+//         }
+//     },
+//     showMyDB: function() {
+//         if (personalMovieDB.privat == false) {
+//             console.log(personalMovieDB);
+//         }
+//     },
+//     toggleVisibleMyDB: function() {
+//         if (personalMovieDB.privat == false) {
+//             personalMovieDB.privat = true;
+//         } else {
+//             personalMovieDB.privat = false;
+//         }
+//     },
+//     writeYourGenres: function() {
+//         for (let i = 1; i <= 3; i++) {
+//             let genres = prompt(`Your favourite genre number ${i}`);
+//             if (genres == null || genres == '') {
+//                 i--;
+//             } else {
+//                 personalMovieDB.genres[i - 1] = genres;
+//             }
+//         }
 
-        personalMovieDB.genres.forEach((item, i) => {
-            console.log(`Любимый жанр №${i + 1} - это ${item}`);
-        });
-    }
-};
+//         personalMovieDB.genres.forEach((item, i) => {
+//             console.log(`Любимый жанр №${i + 1} - это ${item}`);
+//         });
+//     }
+// };
 
-personalMovieDB.writeYourGenres();
+// personalMovieDB.writeYourGenres();
 
 
 
@@ -285,3 +285,85 @@ personalMovieDB.writeYourGenres();
 
 // console.log(john.armor);
 // john.sayHello();
+
+
+// Динамеческая типизация
+// to string
+//1)
+// console.log(typeof(String(null)));
+// console.log(typeof(String(10)));
+
+// //2)
+// console.log(typeof((5 + '')));
+// const num = 5;
+// console.log('https://vk.com/catalogue/' + num);
+// const fontSize = 26 + 'px';
+
+// // to number
+// //1)
+// console.log(typeof(Number('4')));
+
+// //2)
+// console.log(typeof(+'4'));
+
+// //3)
+// console.log(typeof(parseInt('15px', 10)));
+// console.log(parseInt('15px', 10));
+
+// let answer = +prompt('Hello', '');
+
+// // to boolean
+
+// // 0, '', null, undefined, NaN - всё это превращается в false
+
+// //1)
+
+// let switcher = null;
+
+// if (switcher) {
+//     console.log('working...');
+// }
+
+// switcher = 1;
+
+// if (switcher) {
+//     console.log('working...');
+// }
+
+// //2)
+// console.log(typeof(Boolean('4')));
+
+// //3)
+// console.log(typeof(!!'2343243244'));
+
+// let y = 1;
+// let x = y = 2;
+// alert(x);
+
+// let z = [];
+// console.log(z + 1 + 2);
+
+// alert('1'[0]);
+
+// console.log('семерка' == 'Эльбрус');
+
+const box = document.getElementById('box'),
+      btns = document.getElementsByTagName('button'),
+      circles = document.getElementsByClassName('circle'),
+      hearts = document.querySelectorAll('.heart'),
+      oneHeart = document.querySelector('.heart');
+
+box.style.backgroundColor = 'red';
+box.style.width = '500px';
+box.style.height = '200px';
+
+btns[2].style.borderRadius = '50%';
+circles[0].style.backgroundColor = 'blue';
+
+// for (let i = 0; i < hearts.length; i++) {
+//     hearts[i].style.backgroundColor = 'green';
+// }
+
+hearts.forEach(item => {
+    item.style.backgroundColor = 'green';
+});
