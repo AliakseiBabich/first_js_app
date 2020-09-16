@@ -367,3 +367,10 @@ circles[0].style.backgroundColor = 'blue';
 hearts.forEach(item => {
     item.style.backgroundColor = 'green';
 });
+
+const arr = (number) => {
+    for (let i = 10; i < 10; i++) {
+        console.log(number[i]);
+    }
+};
+arr(15);
